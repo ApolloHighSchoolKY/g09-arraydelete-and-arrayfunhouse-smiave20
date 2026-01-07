@@ -3,7 +3,7 @@ import java.util.Arrays;
 
 public class ArrayFunHouse
 {
-	//Instance Variables
+	//Instance Fields
 	private int[] numArray;
 
 	//Default Constructor
@@ -27,20 +27,27 @@ public class ArrayFunHouse
 
 	//getSum() will return the sum of the numbers from start to stop,
 	//not including stop
+	//Position does matter, so use traditional for loop
+	//IMPORTANT!!!!
 	public int getSum(int start, int stop)
 	{
 		int sum = 0;
 
-
+		for(int i = start; i < stop; i ++)
+			sum += numArray[i];
 		return sum;
 	}
 
 	//getCount() will return number of times val is present
+	//Position does not matter, use a for each loop
+	//IMPORTANT!!!!
 	public int getCount(int val)
 	{
 		int count=0;
 
-
+		for(int x: numArray)
+			if(x == val)
+				count++;
 
 		return count;
 	}
